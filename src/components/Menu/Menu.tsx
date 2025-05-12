@@ -198,7 +198,10 @@ const Menu = ({
   keyboardShouldPersistTaps,
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
-  const { colors, roundness } = theme;
+  const {
+    colors: { elevation: elevationColors },
+    roundness,
+  } = theme;
   const insets = useSafeAreaInsets();
   const [rendered, setRendered] = React.useState(visible);
   const [left, setLeft] = React.useState(0);
@@ -670,7 +673,7 @@ const Menu = ({
                   shadowMenuContainerStyle,
                   {
                     backgroundColor:
-                      colors.elevation[ELEVATION_LEVELS_MAP[elevation]],
+                      elevationColors[ELEVATION_LEVELS_MAP[elevation]],
                   },
                   contentStyle,
                 ]}
